@@ -21,7 +21,12 @@ def get_japanese_emoticon(file, emoticon)
 end
 
 def get_english_meaning(file, emoticon)
-
+  file = load_library(file)
+  if file[:get_meaning].keys.include?(emoticon)
+    return file[:get_meaning][emoticon]
+  else 
+    return "Sorry, that emoticon was not found"
+  end
 end
 
 #get_meaning = japanese |||  get_emoticon = english
